@@ -19,23 +19,18 @@ from fractions import Fraction as Frac
 
 
 # crea una lista de nombres de las columnas
+
 def NombrarColumnas(columnas):
-    tabla = []
-    for i in range(columnas):
-        nombre = input("Nombra a la columna "+str(i+1)+": ")
-        tabla.append(nombre)
-    return(tabla)
+        return input("nombres de columnas (separadas por coma) : ").split(",")
+
 
 
 # crea el tableau inicial
 def CrearTableauInicial(filas, columnas):
     tableau = []
     for i in range(filas):
-        tabla = []
-        for j in range(columnas):
-            tabla.append(
-                Frac(input("Valor en la fila "+str(i+1)+" columna "+str(j+1)+": ")))
-        tableau.append(tabla)
+        row = input("ingrese los valores del renglon (separadas por coma) : ").split(",")
+        tableau.append( list( map(Frac,row) ) )
     return(tableau)
 
 
